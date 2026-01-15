@@ -106,3 +106,22 @@ Save time by adding this to your `.bashrc` or `.zshrc`:
 ```bash
 alias k="kubectl"
 # Usage: k get pods
+
+```**2. Use `-o` for Output Formatting**
+Get output in different formats: `-o yaml`, `-o json`, `-o wide`, `-o custom-columns=...`  
+
+**3. Auto-Complete**
+Enable shell auto-completion for `kubectl` commands:
+```bash
+source <(kubectl completion bash) # for bash
+source <(kubectl completion zsh)  # for zsh
+```
+***
+
+### Why this format works:
+* **Badges:** The shields at the top give it a professional, "repository-ready" look.
+* **Categorization:** Grouping by function (Networking vs. Storage) is mentally easier to process than an alphabetical list.
+* **Tables:** They provide perfect alignment between the command and its definition, making it highly scannable.
+* **Copy-Paste Ready:** I included the `kubectl` prefix in every command so you can copy the cell content directly into your terminal.
+
+**Would you like me to add a specific section for "Helm" commands or "Security" (RBAC) definitions as well?**
