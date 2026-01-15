@@ -1,0 +1,41 @@
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: demo-cronjob
+  namespace: nginx
+spec:
+  schedule: "*/0.5 * * * *" # Runs every 30 seconds
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          name: demo-pod-cronjob-template
+          labels:
+            app: demo-cronjob
+        spec:
+          containers:
+          - name: busybox-container
+            image: busybox:latest
+            command: 
+            - sh
+            - -c
+            - >
+              echo 'Starting cronjob......' && mkdir -p /demo-data &&
+              echo "CronJob execution at $(date +\%s)" >> /demo-data/cronjob-execution.txt &&
+              mkdir -p /backups && cp /demo-data/cronjob-execution.txt /backups/cronjob-execution-$(date +\%s).txt &&
+              echo 'Cronjob completed.'
+            volumeMounts:
+            - name: demo-volume
+              mountPath: /demo-data
+            - name: backup-volume
+              mountPath: /backups
+          restartPolicy: Never
+          volumes:
+          - name: demo-volume
+            hostPath:
+              path: /demo-data
+              type: DirectoryOrCreate
+          - name: backup-volume
+            hostPath:
+              path: /backups
+              type: DirectoryOrCreate
