@@ -39,3 +39,6 @@ spec:
             hostPath:
               path: /backups
               type: DirectoryOrCreate
+
+
+# full co

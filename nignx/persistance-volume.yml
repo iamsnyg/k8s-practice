@@ -14,3 +14,10 @@ spec:
   storageClassName: local-storage
   hostPath:
     path: /mnt/data
+
+# commands
+# kubectl apply -f persistance-volume.yml
+# kubectl get pv -n nginx
+# kubectl describe pv local-pv -n nginx
+# delete the pv
+# kubectl delete pv local-pv -n nginx

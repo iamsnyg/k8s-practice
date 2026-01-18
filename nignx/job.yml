@@ -17,3 +17,14 @@ spec:
         image: busybox:latest
         command: ["sh", "-c", "echo 'Hello from the busybox container' && sleep 10"]
       restartPolicy: Never
+
+
+# commands
+# kubectl apply -f job.yml
+# kubectl get jobs -n nginx
+# kubectl get pods -n nginx -o wide
+# kubectl describe job demo-job -n nginx
+
+# logs
+# kubectl logs <pod-name> -n nginx
+# eg: kubectl logs demo-job-xxxxx -n nginx
