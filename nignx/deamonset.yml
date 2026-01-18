@@ -20,3 +20,15 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+
+# commands
+# kubectl apply -f deamonset.yml
+# kubectl get daemonsets -n nginx
+# kubectl get pods -n nginx -o wide
+# kubectl describe daemonset nginx-daemonset -n nginx
+# delete the daemonset
+# kubectl delete daemonset nginx-daemonset -n nginx
+# or
+# kubectl delete -f deamonset.yml
+# scale the daemonset
+# kubectl scale daemonset nginx-daemonset --replicas=5 -n nginx

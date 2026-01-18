@@ -21,3 +21,15 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+
+# commands
+# kubectl apply -f replicaset.yml
+# kubectl get replicaset -n nginx
+# kubectl get pods -n nginx -o wide
+# kubectl describe replicaset nginx-replicaset -n nginx
+# delete the replicaset
+# kubectl delete replicaset nginx-replicaset -n nginx
+# or
+# kubectl delete -f replicaset.yml
+# scale the replicaset
+# kubectl scale replicaset nginx-replicaset --replicas=5 -n nginx
