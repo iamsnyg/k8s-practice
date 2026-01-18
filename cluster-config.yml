@@ -17,4 +17,9 @@ nodes:
     hostPort: 443
     protocol: TCP
 
+
+# commands
+# kind create cluster --name=iamsnyg-cluster --config=kind-cluster-config.yml
+# After creating the kind cluster
+# kubectl cluster-info --context kind-iamsnyg-cluster
   
