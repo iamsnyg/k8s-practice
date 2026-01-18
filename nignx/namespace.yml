@@ -4,3 +4,6 @@ metadata:
   name: nginx
   labels:
     name: nginx
+
+# commands
+# kubectl apply -f namespace.yml

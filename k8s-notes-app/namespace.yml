@@ -4,3 +4,6 @@ metadata:
   name: notes-app
   labels:
     name: notes-app
+
+# commands
+# kubectl apply -f namespace.yml
