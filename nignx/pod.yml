@@ -16,3 +16,5 @@ spec:
 # kubectl apply -f pod.yml
 # kubectl get pods -n nginx
 # kubectl describe pod nginx-pod -n nginx
+# delete the pod
+# kubectl delete pod nginx-pod -n nginx

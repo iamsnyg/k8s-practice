@@ -21,3 +21,17 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+
+# commands
+# kubectl apply -f deployment.yml
+# kubectl get deployments -n nginx
+# kubectl get pods -n nginx -o wide
+# kubectl describe deployment nginx-deployment -n nginx
+
+# delete the deployment
+# kubectl delete deployment nginx-deployment -n nginx
+# or
+# kubectl delete -f deployment.yml
+
+# scale the deployment
+# kubectl scale deployment nginx-deployment --replicas=5 -n nginx
