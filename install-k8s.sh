@@ -24,6 +24,33 @@ sudo apt-get install -y docker.io
 # add user to docker group
 sudo usermod -aG docker $USER && newgrp docker
 
+# create k8s directory
+mkdir k8s && cd k8s
+
+# configure kind cluster into vim
+vim kind-cluster-config.yml << EOF
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  image: kindest/node:v1.34.3
+- role: worker
+  image: kindest/node:v1.34.3
+- role: worker
+  image: kindest/node:v1.34.3
+- role: worker
+  image: kindest/node:v1.34.3
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+
+EOF
+
+
 
 # give execution permission this script
 # chmod +x install-k8s.sh

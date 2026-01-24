@@ -13,3 +13,11 @@ spec:
     port: 80
     targetPort: 80
   type: ClusterIP
+
+  # commands
+  # kubectl apply -f service.yml
+  # kubectl get services -n nginx
+  # kubectl describe service nginx-service -n nginx
+
+  # port forwarding to access the service
+  # kubectl port-forward svc/nginx-service 8080:80 --address=0.0.0.0
